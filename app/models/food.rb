@@ -1,3 +1,5 @@
 class Food < ApplicationRecord
-  belongs_to :name, class_name: 'User'
+  belongs_to :user, class_name: 'User'
+  has_many :recipe_foods
+  has_many :recipes, through: :recipe_foods
 end
