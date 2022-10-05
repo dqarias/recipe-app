@@ -1,6 +1,8 @@
-<div>
-  <div>
+<div class="container">
+  <div class="card d-flex px-4 py-2 flex-row justify-content-between" >
+  <div >
     <%= recipe.name %>
+  <div class="card-link">
     <% if can? :destroy, recipe %>
     <%= link_to 'Remove',
       recipe_path(recipe), data: {
@@ -10,7 +12,9 @@
       class: "btn btn-danger" %>
       <% end %>
   </div>
-  <div class="text-truncate">
+  </div>
+   <div class="text-truncate">
     <%= recipe.description %>
+  </div>
   </div>
 </div>
