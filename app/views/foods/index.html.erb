@@ -5,7 +5,8 @@
       <h1>Foods</h1>
     </div>
     <div class="col">
-      <%= link_to "Add new Food", new_food_path %>
+    
+      <%= link_to "Add new Food", new_food_path, :class => 'btn btn-sm btn-outline-secondary' %>
     </div>
   </div>
   <div id="foods">
@@ -27,7 +28,7 @@
       <td><%= food.measurement_unit %></td>
       <td><%= food.price %></td>
       <td><%= food.quantity %></td>
-      <td><%= button_to "Delete", food, method: :delete %> </td>
+      <td><%= button_to "Delete", food, method: :delete, class: 'btn btn-sm btn-outline-danger' %> </td>
     </tr>
           <% end %>
         </tbody>

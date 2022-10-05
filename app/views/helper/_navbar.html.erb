@@ -1,19 +1,20 @@
-<nav class="navbar bg-light">
+<nav class="navbar navbar-dark bg-dark">
   <% if user_signed_in? %>
 
   <div class="container-fluid justify-content-start">
     Logged in as <strong class="ml-2"><%= current_user.email %></strong>
-    <%= button_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-outline-success me-2'  %>
+    <%= button_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-outline-danger me-2'  %>
 
-  <%= link_to "All Foods", foods_path, :class => 'btn btn-sm btn-outline-secondary'  %>
-    <%# <button class="btn btn-outline-success me-2" type="button">Main button</button> %>
-    <%# <button class="btn btn-sm btn-outline-secondary" type="button">Smaller button</button> %>
-  <%= link_to "All Recipes", recipes_path, :class => 'btn btn-sm btn-outline-secondary'  %>
+  <%= link_to "All Foods", foods_path, :class => 'btn btn-sm btn-outline-info me-md-3'  %>
+  <%= link_to "All Recipes", recipes_path, :class => 'btn btn-sm btn-outline-info me-md-3'  %>
+  <%= link_to "All Recipes", recipes_path, :class => 'btn btn-sm btn-outline-info me-md-3'  %>
   </div>
 
   <% else %>
-    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %>
-    <%= link_to "Log in", new_user_session_path, :class => 'navbar-link'  %>
+    <div class="container-fluid justify-content-start">
+    <%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-sm btn-outline-info me-md-3'  %>
+    <%= link_to "Log in", new_user_session_path, :class => 'btn btn-sm btn-outline-info'  %>
+    </div>
   <% end %>
 
 </nav>
