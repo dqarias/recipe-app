@@ -1,17 +1,20 @@
-<div>
-  <div>
-    <%= recipe.name %>
-    <%= "By #{recipe.user.name}" %>
-    <% if can? :destroy, recipe %>
-    <%= link_to 'Remove',
+<div class="container">
+<div class="card d-flex px-4 py-2 flex-row justify-content-between" >
+  <div clas="d-flex px-4 py-2 flex-column justify-content-between">
+    <p><%= recipe.name %></p>
+    <p><%= "By #{recipe.user.name}" %></p>
+      <% if can? :destroy, recipe %>
+    <p><%= link_to 'Remove',
       recipe_path(recipe), data: {
                       turbo_method: :delete,
                       turbo_confirm: "Are you sure?"
                     },
-      class: "btn btn-danger" %>
+      class: "btn btn-danger" %></p>
+      <% end %>
   </div>
   <div>
-    <div>Total food items: <%= recipe.foods.count %></div>
-    <div>Total Price: <%= recipe.total_cost %></div>
+    <div>Total food items: </div>
+    <div>Total Price: </div>
+  </div>
   </div>
 </div>

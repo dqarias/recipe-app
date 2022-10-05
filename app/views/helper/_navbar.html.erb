@@ -2,12 +2,11 @@
   <% if user_signed_in? %>
 
   <div class="container-fluid justify-content-start">
-    Logged in as <strong class="ml-2"><%= current_user.email %></strong>
+    Welcome <strong class="ml-2"><%= current_user.name %></strong>
     <%= button_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-outline-danger me-2'  %>
-
-  <%= link_to "All Foods", foods_path, :class => 'btn btn-sm btn-outline-info me-md-3'  %>
-  <%= link_to "All Recipes", recipes_path, :class => 'btn btn-sm btn-outline-info me-md-3'  %>
-  <%= link_to "All Recipes", recipes_path, :class => 'btn btn-sm btn-outline-info me-md-3'  %>
+    <%= link_to "All Foods", foods_path, :class => 'btn btn-sm btn-outline-info me-md-3'  %>
+    <%= link_to "My Recipes", recipes_path, :class => 'btn btn-sm btn-outline-info me-md-3'  %>
+    <%= link_to "Public Recipes", public_recipes_path, :class => 'btn btn-sm btn-outline-info me-md-3'  %>
   </div>
 
   <% else %>
