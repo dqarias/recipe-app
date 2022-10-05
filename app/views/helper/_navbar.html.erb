@@ -3,6 +3,7 @@
     Logged in as <strong><%= current_user.email %></strong>.
     <%= button_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
     <%= link_to "All Foods", foods_path, :class => 'navbar-link'  %>
+    <%= link_to "All Recipes", recipes_path, :class => 'navbar-link'  %>
 
 
 
