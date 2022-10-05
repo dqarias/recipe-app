@@ -3,11 +3,15 @@ class RecipesController < ApplicationController
 
   # GET /recipes or /recipes.json
   def index
-    @recipes = Recipe.all
+    @user = current_user
+    @recipes = Recipe.where(user_id: @user.id)
+    # @recipes = Recipe.all
   end
 
   def public_recipes
-    @recipes = Recipe.select(&:public)
+    #@recipes = Recipe.select(&:public)
+    @recipes = Recipe.where(public: true)
+   
   end
 
   # GET /recipes/1 or /recipes/1.json
