@@ -2,7 +2,7 @@
   <% if user_signed_in? %>
 
   <div class="container-fluid justify-content-start">
-    Logged in as <strong><%= current_user.email %></strong>
+    Logged in as <strong class="ml-2"><%= current_user.email %></strong>
     <%= button_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-outline-success me-2'  %>
 
   <%= link_to "All Foods", foods_path, :class => 'btn btn-sm btn-outline-secondary'  %>
@@ -10,9 +10,6 @@
     <%# <button class="btn btn-sm btn-outline-secondary" type="button">Smaller button</button> %>
   <%= link_to "All Recipes", recipes_path, :class => 'btn btn-sm btn-outline-secondary'  %>
   </div>
-
-
-
 
   <% else %>
     <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
