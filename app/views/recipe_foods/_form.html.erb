@@ -18,7 +18,7 @@
 
   <div>
     <%= form.label :food_id, style: "display: block" %>
-    <%= form.select :food_id, @foods.map {|ind_food| ["#{ind_food.name} in #{ind_food.measurement_unit}", ind_food.id]} %>
+    <%= form.select :food_id, @foods.map {|food| ["#{food.name} in #{food.measurement_unit}", food.id]} %>
     <%= link_to 'Add New Food', action: :add_food %>
   </div>
 
