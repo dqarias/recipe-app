@@ -4,8 +4,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes or /recipes.json
   def index
-    @user = current_user
-    @recipes = Recipe.where(user_id: @user.id)
+    @recipes = current_user.recipes
     # @recipes = Recipe.all
   end
 
@@ -15,7 +14,9 @@ class RecipesController < ApplicationController
   end
 
   # GET /recipes/1 or /recipes/1.json
-  def show; end
+  def show
+    @recipe_foods = @recipe.recipe_foods.includes(:food, @recipe)
+  end
 
   # GET /recipes/new
   def new
@@ -54,6 +55,23 @@ class RecipesController < ApplicationController
       end
     end
   end
+
+
+  def shopping_list
+    @total_value = 0
+    recipe = Recipe.find(params[:recipe_id])
+    @recipe_foods = recipe.recipe_foods.includes(:food).select do |recipe_food|
+      food = recipe_food.food
+      user_food = current_user.foods.find_by(name: food.name, measurement_unit: food.measurement_unit)
+      # @total_value = @total_value + recipe_food.process_quantity(user_food).positive?
+
+      @checking = recipe_food.process_quantity(user_food)
+
+
+    end
+      @total_value = @total_value.round(2)
+      @items_to_buy = @recipe_foods.count
+    end
 
   # DELETE /recipes/1 or /recipes/1.json
   def destroy

@@ -29,15 +29,13 @@
   <div>
     <%= form.label :description, style: "display: block" %>
     <%= form.text_area :description %>
+</div>
+  <div class="form-check form-switch">
+    <%= form.check_box :public, class: "form-check-input", role: "switch" %>
+    <%= form.label :public, style: "display: block", class: "form-check-label"  %>
   </div>
-
-  <div>
-    <%= form.label :public, style: "display: block" %>
-    <%= form.check_box :public %>
-  </div>
-
-
-  <div>
+  
+  <div class="mt-4 actions">
     <%= form.submit %>
   </div>
 <% end %>

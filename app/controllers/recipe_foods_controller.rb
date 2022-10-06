@@ -5,11 +5,13 @@ class RecipeFoodsController < ApplicationController
 
   # GET /recipe_foods or /recipe_foods.json
   def index
-    @recipe_foods = RecipeFood.find_by(@recipe)
+    @recipe_foods = RecipeFood.find_by(@recipe).includes(:food)
   end
 
   # GET /recipe_foods/1 or /recipe_foods/1.json
-  def show; end
+  def show
+    @recipe_foods = RecipeFood.find.(params[:id]).includes(:food)
+  end
 
   # GET /recipe_foods/new
   def new
@@ -59,7 +61,8 @@ class RecipeFoodsController < ApplicationController
     end
   end
 
-  def add_food
+    
+    def add_food
     redirect_to new_food_path and return
   end
 
