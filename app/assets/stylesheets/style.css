@@ -1,0 +1,63 @@
+.list-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.main_body {
+  border-radius: 5px;
+  border: 3px solid grey;
+  margin: auto auto;
+  height: 100px;
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.recipe-list a {
+  margin-left: 21%;
+}
+
+.set-middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recipe-list-2 a {
+  margin-left: 14.5%;
+  margin-top: 5px;
+}
+
+.ind-list {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px;
+}
+
+.left-style {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 100px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 50%;
+  margin-bottom: 20px;
+}
+
+.shop-list {
+  display: flex;
+  width: 70%;
+  margin: auto auto;
+  justify-content: space-between;
+  font-size: 2rem;
+
+  /* flex-direction: column; */
+}
+
+.shop-list div {
+  font-size: 2rem;
+}
