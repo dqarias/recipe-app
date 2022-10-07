@@ -11,5 +11,5 @@
     <%= render 'recipe_foods/shopping_item', recipe_food: %>
     <%sum += (recipe_food.food.price * recipe_food.quantity.to_i)%>
   <% end %>
- <%= "Total: #{sum}"%>
+ <%= "Total value of food needed: $ #{sum}"%>
 <% end %>
