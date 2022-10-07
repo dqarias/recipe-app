@@ -56,7 +56,6 @@ class RecipesController < ApplicationController
     end
   end
 
-
   def shopping_list
     @total_value = 0
     recipe = Recipe.find(params[:recipe_id])
@@ -66,12 +65,10 @@ class RecipesController < ApplicationController
       # @total_value = @total_value + recipe_food.process_quantity(user_food).positive?
 
       @checking = recipe_food.process_quantity(user_food)
-
-
     end
-      @total_value = @total_value.round(2)
-      @items_to_buy = @recipe_foods.count
-    end
+    @total_value = @total_value.round(2)
+    @items_to_buy = @recipe_foods.count
+  end
 
   # DELETE /recipes/1 or /recipes/1.json
   def destroy

@@ -10,7 +10,7 @@ class RecipeFoodsController < ApplicationController
 
   # GET /recipe_foods/1 or /recipe_foods/1.json
   def show
-    @recipe_foods = RecipeFood.find.(params[:id]).includes(:food)
+    @recipe_foods = RecipeFood.find.call(params[:id]).includes(:food)
   end
 
   # GET /recipe_foods/new
@@ -61,8 +61,7 @@ class RecipeFoodsController < ApplicationController
     end
   end
 
-    
-    def add_food
+  def add_food
     redirect_to new_food_path and return
   end
 
