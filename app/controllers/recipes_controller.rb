@@ -62,9 +62,7 @@ class RecipesController < ApplicationController
     @recipe_foods = recipe.recipe_foods.includes(:food).select do |recipe_food|
       food = recipe_food.food
       user_food = current_user.foods.find_by(name: food.name, measurement_unit: food.measurement_unit)
-      # @total_value += recipe_food.process_quantity(user_food).positive?
-
-      @checking = recipe_food.process_quantity(user_food)
+      @total_value += recipe_food.process_cost(user_food)
     end
     @total_value = @total_value.round(2)
     @items_to_buy = @recipe_foods.count
