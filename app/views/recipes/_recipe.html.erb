@@ -23,7 +23,7 @@
     <strong>Public:</strong>
     <%= recipe.public %>
   </p>
-
+<%= link_to 'Generate Shopping List', recipe_shopping_list_path(recipe), class: 'btn btn-secondary' %>
 <%= link_to "Add new recipe food", new_recipe_recipe_food_path(recipe) %>
 <%= render 'helper/food_table' do %>
     <%= render recipe.recipe_foods %>

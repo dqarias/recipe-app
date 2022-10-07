@@ -13,8 +13,8 @@
       <% end %>
   </div>
   <div>
-    <div>Total food items: </div>
-    <div>Total Price: </div>
+    <div>Total food items: <%= recipe.recipe_foods.count %></div>
+    <div>Total Price: <%= number_to_currency(recipe.total_cost) %></div>
   </div>
   </div>
 </div>
