@@ -6,7 +6,10 @@
 </div>
 
 <%= render 'helper/shopping_table' do %>
+   <%sum = 0%>
   <% @recipe_foods.each do |recipe_food| %>
     <%= render 'recipe_foods/shopping_item', recipe_food: %>
+    <%sum += (recipe_food.food.price * recipe_food.quantity.to_i)%>
   <% end %>
+ <%= "Total: #{sum}"%>
 <% end %>
