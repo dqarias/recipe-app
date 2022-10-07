@@ -1,15 +1,24 @@
+<div class="container text-center">
 <p style="color: green"><%= notice %></p>
 
-<h1>Recipes</h1>
+  <div class="row set-middle">
+    <div class="col">
+      <h1>Recipes</h1>
+    </div>
+    <div class="col">
+<%= link_to "New recipe", new_recipe_path, :class => 'btn btn-sm btn-outline-secondary'  %>
+    </div>
+  </div>
+
+
 
 <div id="recipes">
 <p><%= @params %></p>
   <% @recipes.each do |recipe| %>
     <%= render 'recipes/listed_recipe', recipe: %>
-    <p>
-      <%= link_to "Show This Recipe", recipe %>
+    <p class="recipe-list">
+      <%= link_to "Show recipe", recipe %>
     </p>
   <% end %>
 </div>
-
-<%= link_to "New recipe", new_recipe_path %>
+</div>

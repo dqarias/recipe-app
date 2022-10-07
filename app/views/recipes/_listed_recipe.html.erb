@@ -1,7 +1,7 @@
-<div class="container-lg row p-4 border border-secondary rounded shadow">
+<div class="main_body">
   <div class="col-3">
     <h3>
-      <%= link_to recipe.name, recipe %>
+      <%= link_to recipe.name, recipe, class: 'btn btn-primary' %>
     </h3>
     <% if can? :destroy, recipe %>
     <div><%= link_to 'Remove',
@@ -9,7 +9,8 @@
                       turbo_method: :delete,
                       turbo_confirm: "Are you sure?"
                     },
-      class: "btn btn-danger" %></div>
+      class: "btn btn-danger" %>
+      </div>
       <% end %>
   </div>
   <div class="col-5 text-truncate">

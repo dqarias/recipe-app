@@ -1,30 +1,38 @@
 <div id="<%= dom_id recipe %>">
-  <p>
-    <strong>Name:</strong>
-    <%= recipe.name %>
-  </p>
+  
+  <div class="ind-list">
+  <div class="left-style">
+   
+   <h4> Name: 
+      <%= recipe.name %>
+    </h2>
 
-  <p>
-    <strong>Preparation time:</strong>
-    <%= recipe.preparation_time %>
-  </p>
+    <h4>Preparation time:
+      <%= recipe.preparation_time %>
+    </h2>
 
-  <p>
-    <strong>Cooking time:</strong>
-    <%= recipe.cooking_time %>
-  </p>
+    </div>
 
-  <p>
-    <strong>Step to go:</strong>
-    <%= recipe.description %>
-  </p>
+    <div class="left-style">
+      <h4>Cooking time:
+      <%= recipe.cooking_time %>
+    </h2>
 
-  <p>
-    <strong>Public:</strong>
-    <%= recipe.public %>
-  </p>
+  <div>
+    <h4>Step to go: </h2>
+    <span> <%= recipe.description %> </span>
+    </div>
+    <h4>Public:    
+      <%= recipe.public %>
+    </h2>
+    </div>
+
+  </div>
+  <div class="buttons">
 <%= link_to 'Generate Shopping List', recipe_shopping_list_path(recipe), class: 'btn btn-secondary' %>
-<%= link_to "Add new recipe food", new_recipe_recipe_food_path(recipe) %>
+<%= link_to "Add new recipe food", new_recipe_recipe_food_path(recipe), class: 'btn btn-primary' %>
+  </div>
+
 <%= render 'helper/food_table' do %>
     <%= render recipe.recipe_foods.includes(:food).includes(:recipe) %>
 <% end %>

@@ -1,10 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Users</h1>
+<% email = @users.email %>
+
+<h2>You are Welcome to Olamarx and Dino's App. Take a tour 🥰🥰</h2> <br><br><br>
+<h3>You are logged in as <%= email %></h3>
 
 <div id="users">
     <%= render @users %>
     <p>
-      <%= link_to "Show this user", @users %>
+      <%= link_to "Show this user", @users, class: 'btn btn-primary' %>
     </p>
 </div>
