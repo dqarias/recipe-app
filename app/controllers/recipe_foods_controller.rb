@@ -69,7 +69,7 @@ class RecipeFoodsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_recipe_food
-    @recipe_food = RecipeFood.find(params[:id]).includes(:food)
+    @recipe_food = RecipeFood.find(params[:id])
   end
 
   def set_recipe
