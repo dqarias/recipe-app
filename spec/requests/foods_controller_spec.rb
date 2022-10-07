@@ -5,7 +5,7 @@ RSpec.describe 'Food controller', type: :request do
     @user = User.new(name: 'Dino', email: 'dino@mail.com', password: '123456')
     @user.skip_confirmation!
     @user.save
-    @food = Food.create(user: @user, name: 'apple', quantity: "8", price: 100, measurement_unit: 'unit')
+    @food = Food.create(user: @user, name: 'apple', quantity: '8', price: 100, measurement_unit: 'unit')
     sign_in(@user)
   end
 
@@ -23,5 +23,4 @@ RSpec.describe 'Food controller', type: :request do
     get foods_path
     expect(response.body).to include('apple')
   end
-
 end

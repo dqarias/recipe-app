@@ -1,4 +1,3 @@
-
 require 'rails_helper'
 
 RSpec.describe 'IndexRecipes', type: :system do
@@ -18,5 +17,4 @@ RSpec.describe 'IndexRecipes', type: :system do
     visit '/users'
     expect(page.body).to include('Dino')
   end
-
 end

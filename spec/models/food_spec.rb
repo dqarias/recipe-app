@@ -5,7 +5,7 @@ RSpec.describe Food, type: :model do
     @user = User.new(name: 'Dino', email: 'dino@mail.com', password: '123456')
     @user.skip_confirmation!
     @user.save
-    @food = Food.create(user: @user, name: 'apple', quantity: "8", price: 100, measurement_unit: 'unit')
+    @food = Food.create(user: @user, name: 'apple', quantity: '8', price: 100, measurement_unit: 'unit')
   end
 
   it 'Should has a valid value' do
@@ -20,7 +20,7 @@ RSpec.describe Food, type: :model do
   end
 
   it 'Quantity is required' do
-    @food.quantity = "6"
+    @food.quantity = '6'
     expect(@food).to be_valid
   end
 end

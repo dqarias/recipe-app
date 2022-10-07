@@ -22,5 +22,4 @@ RSpec.describe 'Recipes controller', type: :request do
     get recipes_path
     expect(response.body).to include('Recipes')
   end
-
 end
