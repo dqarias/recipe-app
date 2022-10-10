@@ -1,0 +1,19 @@
+<div class="main_body">
+  <div class="col-3">
+    <h3>
+      <%= link_to recipe.name, recipe, class: 'btn btn-primary' %>
+    </h3>
+    <% if can? :destroy, recipe %>
+    <div><%= link_to 'Remove',
+      recipe_path(recipe), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                    },
+      class: "btn btn-danger" %>
+      </div>
+      <% end %>
+  </div>
+  <div class="col-5 text-truncate">
+    <%= recipe.description %>
+  </div>
+</div>

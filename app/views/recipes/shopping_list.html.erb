@@ -1,0 +1,15 @@
+<h1>Shopping List</h1>
+
+<%= render 'helper/shopping_table' do %>
+   <%sum = 0 %>
+  <% @recipe_foods.each do |recipe_food| %>
+    <%= render 'recipe_foods/shopping_item', recipe_food: %>
+    <%sum += (recipe_food.food.price * recipe_food.quantity.to_i)%>
+  <% end %>
+
+
+<div class="shop-list">
+  <div>Amount of items to buy: <%= @items_to_buy %></div>
+ <div><%= "Total value of food needed: $ #{sum}"%>
+ </div>
+<% end %>
